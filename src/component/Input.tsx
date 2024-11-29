@@ -1,6 +1,6 @@
 import { TextField } from "@mui/material"
 import React, { ChangeEvent } from "react"
-import { text } from "stream/consumers"
+// import { text } from "stream/consumers"
 
 interface props {
   type: string
@@ -25,8 +25,8 @@ export default function Input({
     event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     if (emailid) {
-      const { name, value } = event.target
-      emailid(name, value)
+      const {name,value} = event.target
+      emailid(name,value)
     }
   }
 
@@ -36,9 +36,7 @@ export default function Input({
         type={type}
         label={label}
         name={name}
-        sx={{ ...style ,'& .css-7pxcz1-MuiInputBase-input-MuiOutlinedInput-input':{
-          padding:'6px'
-        }}}
+        sx={{ ...style }}
         variant={variant}
         onChange={(event) => emailValueLogin(event)}
       

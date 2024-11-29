@@ -8,14 +8,15 @@ interface PropsButton {
     text: string,
     style?: object,
     variant1?: "contained"| 'outlined'
-    type?:"submit" 
+    type?:"submit" | "button",
+    icon?:String
 }
 
-export default function ButtonCompo({ text, variant1, style,type }: PropsButton) {
+export default function ButtonCompo({ text, variant1, style,type ,icon}: PropsButton) {
 
     // console.log(typeof variant)
     return <>
-        <Button sx={{ ...style }} variant={variant1} type={type}>{text} </Button>
+        <Button sx={{ ...style }} endIcon={icon} variant={variant1} type={type}>{text}  </Button>
 
     </>
 }

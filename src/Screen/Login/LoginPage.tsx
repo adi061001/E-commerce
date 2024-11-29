@@ -1,9 +1,9 @@
 import { Box, Checkbox, TextField, Typography } from "@mui/material"
-import Input from "./Input"
-import ButtonCompo from "./button"
+import Input from "../../component/Input"
+import ButtonCompo from "../../component/button"
 import "./Login.css"
 import { FormEvent, FormEventHandler, useState } from "react"
-import { loginDetails, signUpDetails } from "../typescriptDatatype/dataType"
+import { loginDetails, signUpDetails } from "../../typescriptDatatype/dataType"
 
 export default function Login() {
   let [loginDetails, setLoginDetails] = useState<loginDetails>({
@@ -84,7 +84,6 @@ export default function Login() {
                     left: "77%",
                     mt: 2,
                     fontFamily: "Dancing Script, serif",
-
                     cursor: "pointer",
                     border: "1px solid black",
                     padding: "3px",

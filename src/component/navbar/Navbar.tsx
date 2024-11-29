@@ -3,15 +3,29 @@ import AppBar from "@mui/material/AppBar"
 import Box from "@mui/material/Box"
 import Toolbar from "@mui/material/Toolbar"
 import Typography from "@mui/material/Typography"
-import Input from "./Input"
+import Input from "../Input"
 import SearchIcon from '@mui/icons-material/Search';
-import { BorderAll } from "@mui/icons-material"
+import "aos/dist/aos.css";
+import AOS from "aos"
+import { useEffect } from "react"
 
 
 export default function PrimarySearchAppBar() {
+  
+
+  
+  
+  useEffect(() => {
+    AOS.init({
+      duration : 2000
+    });
+    AOS.init();
+  }, []);
+
+
   return (
     <Box>
-      <AppBar sx={{ background: "#ffe7a3" }}>
+      <AppBar sx={{ background: "#009eaf7a"}}>
         <Toolbar
           sx={{
             color: "black",
@@ -20,6 +34,7 @@ export default function PrimarySearchAppBar() {
           }}
         >
           <Typography
+           data-aos="fade-down"
             variant={"h4"}
             style={{
               margin: 4,
@@ -34,7 +49,7 @@ export default function PrimarySearchAppBar() {
             <Input
               type="search"
               label=""
-              style={{ mt: 1, width: 500, BorderAll:"1px solid black",'& .css-7pxcz1-MuiInputBase-input-MuiOutlinedInput-input':{
+              style={{ mt: 1, width: 500,'& .css-7pxcz1-MuiInputBase-input-MuiOutlinedInput-input':{
                 padding:'6px'
                 
               }}}
@@ -43,14 +58,14 @@ export default function PrimarySearchAppBar() {
           </Box>
 
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
-            <Box component={"h4"} sx={{ mr: 4 }}>
+            <Box component={"h4"} sx={{ mr: 4 }} data-aos="fade-down"  >
               Category{" "}
             </Box>
-            <Box component={"h4"} sx={{ mr: 4 }}>
+            <Box component={"h4"} sx={{ mr: 4 }} data-aos="fade-down">
               Become Seller{" "}
             </Box>
-            <Box component={"h4"}>Login</Box>
-            <Box component={"h4"}>/SignUp</Box>
+            <Box component={"h4"} data-aos="fade-down">Login</Box>
+            <Box component={"h4"} data-aos="fade-down" >/SignUp</Box>
           </Box>
         </Toolbar>
       </AppBar>
