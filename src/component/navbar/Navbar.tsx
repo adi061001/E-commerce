@@ -8,6 +8,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import "aos/dist/aos.css";
 import AOS from "aos"
 import { useEffect } from "react"
+import { Link } from "react-router-dom"
 
 
 export default function PrimarySearchAppBar() {
@@ -64,8 +65,13 @@ export default function PrimarySearchAppBar() {
             <Box component={"h4"} sx={{ mr: 4 }} data-aos="fade-down">
               Become Seller{" "}
             </Box>
-            <Box component={"h4"} data-aos="fade-down">Login</Box>
-            <Box component={"h4"} data-aos="fade-down" >/SignUp</Box>
+            <Box component={"h4"}>
+            <Link to="/Login"  >Login</Link>
+            </Box>
+            <Box component={"h4"}>
+            <Link to="/Login"  >/SignUp</Link>
+            </Box>
+            
           </Box>
         </Toolbar>
       </AppBar>

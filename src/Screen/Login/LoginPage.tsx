@@ -4,8 +4,18 @@ import ButtonCompo from "../../component/button"
 import "./Login.css"
 import { FormEvent, FormEventHandler, useState } from "react"
 import { loginDetails, signUpDetails } from "../../typescriptDatatype/dataType"
+import CloseIcon from '@mui/icons-material/Close';
+import { useParams } from "react-router-dom"
+
+
+
 
 export default function Login() {
+
+
+
+
+
   let [loginDetails, setLoginDetails] = useState<loginDetails>({
     loginEmail: "",
     loginPassword: "",
@@ -40,21 +50,26 @@ export default function Login() {
       })
     }
   }
+
+
+
   // show hide
   const pageChangeLogin = (value: boolean): void => {
     setshowHidePage(value)
   }
 
+  
   return (
     <>
       {showHidePage ? (
-        <Box>
+        <Box sx={{position:"relative",zIndex:"11000"}}>
           <Box component={"section"} sx={style.box}>
             <Box
               sx={{
                 display: "flex",
                 height: "70vh",
-                mt: "10%",
+                position:"relative",
+                
                 width: "70%",
                 boxShadow: "0px 0px 16px 4px",
               }}
@@ -70,7 +85,7 @@ export default function Login() {
                       top: "145px",
                       left: "75px",
                       fontSize: "55px",
-                      width: "243px",
+                      width: "268px",
                     }}
                   >
                     Tip /Mart
@@ -78,25 +93,37 @@ export default function Login() {
                 </div>
               </Box>
               <Box>
+              
+    
+
                 <Typography
                   sx={{
                     position: "absolute",
-                    left: "77%",
+                    left: "70%",
                     mt: 2,
                     fontFamily: "Dancing Script, serif",
                     cursor: "pointer",
-                    border: "1px solid black",
+                    color:"blue",
                     padding: "3px",
-                    width: "103px",
+                    top:" 334px",
+                    width: "257px;",
                     textAlign: "center",
                     borderRadius: "5px",
                     fontSize: "19px",
+                    zIndex:"1",
+                    // textDecoration:"underline",
+                    fontStyle:"italic",
+  
                   }}
+                  fontFamily={ "fantasy"}
                   component={"h5"}
                   onClick={() => pageChangeLogin(false)}
                 >
-                  Sign-up
+                  <Typography variant="subtitle1" sx={{display:"inline" ,color:"black",textDecoration:"none"}}>Dont have account ? </Typography>
+                   Sign-up 
+                  
                 </Typography>
+                <CloseIcon sx={{position:"absolute",zIndex:1,right:"0px",bottom:"91%",fontSize:"37px",color:"white",background:"red",borderRadius:"3px"}}></CloseIcon>
                 <Box
                   component={"form"}
                   onSubmit={loginCoustomer}
@@ -106,6 +133,10 @@ export default function Login() {
                     alignItems: "",
                     height: "100%",
                     flexDirection: "column",
+                    
+                        backdropFilter: "blur(6px)",
+                        maxWidth: "101%",
+                      pr: "66px"
                   }}
                 >
                   <Input
@@ -165,59 +196,71 @@ export default function Login() {
           </Box>
         </Box>
       ) : (
-        <Box className="sec-2">
-          <Box component={"section"} sx={style.box}>
-            <Box
-              sx={{
-                display: "flex",
-                height: "70vh",
-                mt: "10%",
-                width: "70%",
-                boxShadow: "0px 0px 16px 4px",
-              }}
-            >
-              <Box sx={{ width: 500, mr: 2 }}>
-                <div className="firstbox-signup">
-                  <Typography
-                    variant={"h4"}
-                    style={{
-                      margin: 4,
-                      fontFamily: "Edu AU VIC WA NT Arrows ,cursive",
-                      position: "relative",
-                      top: "55px",
-                      left: "75px",
-                      fontSize: "55px",
-                      width: "243px",
-                    }}
-                  >
-                    Tip /Mart
-                  </Typography>
-                </div>
-              </Box>
-              <Box>
+        <Box sx={{position:"relative",zIndex:"11000"}}>
+        <Box component={"section"} sx={style.box}>
+          <Box
+            sx={{
+              display: "flex",
+              height: "70vh",
+              position:"relative",
+              
+              width: "70%",
+              boxShadow: "0px 0px 16px 4px",
+            }}
+          >
+            <Box sx={{ width: 500, mr: 2 }}>
+              <div className="firstbox-signup">
                 <Typography
-                  sx={{
-                    position: "absolute",
-                    left: "77%",
-                    mt: 2,
-                    fontFamily: "Dancing Script, serif",
-
-                    cursor: "pointer",
-                    border: "1px solid black",
-                    padding: "3px",
-                    width: "103px",
-                    textAlign: "center",
-                    borderRadius: "5px",
-                    fontSize: "19px",
-                  }}
-                  component={"h4"}
-                  onClick={() => {
-                    pageChangeLogin(true)
+                  variant={"h4"}
+                  style={{
+                    margin: 4,
+                    fontFamily: "Edu AU VIC WA NT Arrows ,cursive",
+                    position: "relative",
+                    top: "30px",
+                    left: "75px",
+                    fontSize: "55px",
+                    width: "268px",
                   }}
                 >
-                  Login
+                  Tip /Mart
                 </Typography>
-                <Box
+              </div>
+            </Box>
+            <Box>
+
+            
+
+              {/* It can be used  */}
+              <Typography
+                sx={{
+                  position: "absolute",
+                  left: "84%",
+                  mt: 2,
+                  fontFamily: "Dancing Script, serif",
+                  cursor: "pointer",
+                  color:"blue",
+                  padding: "3px",
+                  top:" 334px",
+                  width: "142px;",
+                  textAlign: "center",
+                  borderRadius: "5px",
+                  fontSize: "19px",
+                  zIndex:"1",
+                  textDecoration:"underline",
+                  fontStyle:"italic",
+
+
+                }}
+                fontFamily={"fantasy"}
+                component={"h5"}
+                onClick={() => pageChangeLogin(true)}
+              >
+                Here is  Login
+              </Typography>
+              
+              <CloseIcon  sx={{position:"absolute",zIndex:1,right:"0px",bottom:"91%",fontSize:"37px",color:"white",background:"red",borderRadius:"3px"}}></CloseIcon>
+
+              <Box
                   component={"form"}
                   onSubmit={loginCoustomer}
                   sx={{
@@ -226,18 +269,22 @@ export default function Login() {
                     alignItems: "",
                     height: "100%",
                     flexDirection: "column",
+                    width: "379px",
+                    backdropFilter: "blur(16px)",
+                    
+                        maxWidth: "101%",
+                      pr: "33px",
+                      pl:"32px"
+                  
                   }}
                 >
-                  
                   <Input
                     type="text"
                     label="Full-Name"
                     style={{ mb: 1, width: 300 }}
                     name="userName"
                     variant="standard"
-                    emailid={inputLogin}
-                    
-                  />
+                    emailid={inputLogin} />
               
                   
                   <Input
@@ -282,10 +329,10 @@ export default function Login() {
                     type="submit"
                   ></ButtonCompo>
                 </Box>
-              </Box>
             </Box>
           </Box>
         </Box>
+      </Box>
       )}
     </>
   )
@@ -295,7 +342,12 @@ const style = {
   box: {
     display: "flex",
     justifyContent: "center",
-    height: "70vh",
+    height: "100vh",
     alignItems: "center",
+    width:"100%",
+        position:" absolute",
+    bottom: "54px",
+    zIndex: "-1",
+    background: "#ffffffba"
   },
 }
