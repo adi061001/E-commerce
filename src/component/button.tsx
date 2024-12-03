@@ -1,5 +1,6 @@
-import { Button } from "@mui/material";
+import { Button} from "@mui/material";
 import React from "react";
+
 
 
 
@@ -7,16 +8,20 @@ import React from "react";
 interface PropsButton {
     text: string,
     style?: object,
-    variant1?: "contained"| 'outlined'
+    variant1?: "contained"| "outlined"
     type?:"submit" | "button",
-    Icon?:React.ReactNode
+    icon?:React.ReactNode
 }
 
-export default function ButtonCompo({ text, variant1, style,type ,Icon}: PropsButton) {
+
+export default function ButtonCompo({ text, variant1, style,type ,icon}: PropsButton) {
 
     // console.log(typeof variant)
     return <>
-        <Button sx={{ ...style }} endIcon={Icon} variant={variant1} type={type}>{text}  </Button>
+        <Button sx={{ ...style }} endIcon={icon} variant={variant1} type={type}>{text}  </Button>
+        
 
     </>
 }
+
+

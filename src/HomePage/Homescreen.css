@@ -1,0 +1,13 @@
+.backHomeImg::after {
+    width: 50%;
+    content: " ";
+    background-image: url(.././image/8797381\ \(2\).jpg);
+    position: absolute;
+    left: 48%;
+    top: 42px;
+    height: 90vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -1;
+}

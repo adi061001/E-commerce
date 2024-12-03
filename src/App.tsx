@@ -1,35 +1,39 @@
 
-import React, { useState } from "react";
-import { HomeScreen
-  
- } from "./Screen/HomePage/HomeScreen";
+import React from "react";
+
 import Login from "./Screen/Login/LoginPage";
-import { Routes,Route, Router } from "react-router-dom";
+import { Routes,Route } from "react-router-dom";
+
+import Signup from "./Screen/Signup/Signup";
+
+import { HomeScreen } from "./HomePage/HomeScreen";
+import { Box } from "@mui/material";
 
 
 
 
 
 export  default function App(){
-let [isValue,setisValue]=useState<Boolean>()
 
 
-function getvalue(){
 
-}
 
   
   return<>
-<HomeScreen isvalue={getvalue}/>
-<Routes>
+  <Box sx={{position:"relative",}}>
+
+
+ <HomeScreen/>
+
+
+ </Box>
+
+
+ <Routes>
   <Route path="/Login" element={<Login/>}></Route>
-</Routes>
-
-  
-
+  <Route path="/Signup" element={<Signup/>}></Route>
+</Routes> 
 
 
-
-     
-  </>
+</>
 }
