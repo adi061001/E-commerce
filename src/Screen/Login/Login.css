@@ -1,7 +1,7 @@
 .firstbox::after {
     width: 597px;
     content: " ";
-    background-image: url(../../image/7366082.jpg);
+    background-image: ul("/public/image/7366082.jpg");
     position: absolute;
     left: 0;
     top: 0;

@@ -1,19 +1,22 @@
 import { Box, Rating, Typography } from '@mui/material'
 import React from 'react'
 import './cards.css'
-import prodImg from '../../image/headphones-audio-listen.jpg'
+
 import styled from 'styled-components'
 import ButtonCompo from '../button'
 
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart'
 import ShoppingBagIcon from '@mui/icons-material/ShoppingBag'
 
+
 let CardProduct = styled(Box)`
   height: 326px;
   margin-left: 40px;
   position: relative;
-  border: 1px solid black;
+
   width: 242px;
+  box-shadow: 0px 3px 15px 0px black;
+
   padding: 13px;
 `
 let CardProdDetails = styled(Box)`
@@ -41,39 +44,39 @@ const CardProductImage = styled.img`
   top: 32px;
 `
 
-const Cardtitle=styled(Typography)`
-  
-  font-style: italic;
-    margin: 0px 0px 0px 0px;
-    font-family: revert;
-    border: 1px solid;
-    width: 125px;
-    border-right: 12px solid #009ead;
-  
 
-`
-export default function Cards () {
+
+interface cardProps{
+ prductName:string
+ productImg:string
+ productRateing:number
+ productPrice:number
+}
+
+
+
+
+export default function Cards ({prductName ,productImg,productRateing,productPrice}:cardProps) {
   return (
     <>
       <Box component={'section'} sx={{ mb: 8 }}>
-        <Cardtitle variant='h5' sx={{ml:5,mb:2}}>
-          Electronics
-          </Cardtitle>
+       
         
         <CardProduct>
           <Rating
             name='half-rating-read'
-            defaultValue={2.7}
-            precision={0.5}
+            defaultValue={5}
+            precision={productRateing}
             readOnly
           />
-          <CardProductImage src={prodImg} />
+          
+          <CardProductImage src={productImg} />
           <CardProdDetails>
-            <CardProdName variant='h6'>Immortal 311 </CardProdName>
+            <CardProdName variant='h6'>{prductName} </CardProdName>
             <Typography sx={{ fontSize: '11px' }} variant='subtitle1'>
               Shiped 3-4 days
             </Typography>
-            <CardProdPrice>$34.55</CardProdPrice>
+            <CardProdPrice>${productPrice}</CardProdPrice>
 
             <Box sx={{ mt: 2 }}>
               <ButtonCompo

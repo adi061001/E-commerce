@@ -8,3 +8,18 @@ export interface signUpDetails{
     userPhone:String
     userPassword:String
 }
+export interface productDet{
+    productid:number,
+    productName:string,
+    prductCat:string,
+    productRating:number,
+    productImg:string,
+    productPrice:number
+}
+
+
+
+export interface productDeatialsfirst {
+
+    Phone:productDet[]
+}
